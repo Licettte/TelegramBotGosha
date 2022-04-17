@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.clojars.org'
+        name 'Clojars'
+    }
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+//for BD
+
+//    runtimeOnly 'org.postgresql:postgresql'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+//for telegramBot
+    implementation 'org.telegram:telegrambots-spring-boot-starter:5.4.0.1'
+    implementation 'avalon-meta:avalon-meta-api:1.4.0'
+    implementation 'meta-merge:meta-merge:1.0.0'
+    implementation 'org.telegram:telegrambots-meta:5.4.0.1'
+    implementation 'org.telegram:telegrambots-abilities:5.4.0.1'
+
+
+    implementation group: 'org.telegram', name: 'telegrambots', version: '5.4.0.1' //версия, на которой работают стикеры
+
+    implementation 'org.telegram:telegrambots:5.7.1'
+    implementation 'com.vdurmont:emoji-java:5.1.1'
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.9.0'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
