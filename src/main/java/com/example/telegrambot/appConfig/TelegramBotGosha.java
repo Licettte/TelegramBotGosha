@@ -18,7 +18,7 @@ import javax.annotation.PostConstruct;
 import javax.ws.rs.ext.ParamConverter;
 
 @Getter
-@Configuration
+@Component
 @Slf4j
 public class TelegramBotGosha extends TelegramWebhookBot {
     private final TelegramFacade facade;
