@@ -39,7 +39,7 @@ public class TelegramFacade {
                         bot.execute(
                                 SendMessage.builder()
                                         .chatId(message.getChatId().toString())
-                                        .text("Ну и че ты тыкаешь на эту кнопку?")
+                                        .text("Это делать не стоит")
                                         .build());
 
                                 ReplyKeyboardMarkup keyboardForCurrency = new ReplyKeyboardMarkup();
@@ -54,8 +54,8 @@ public class TelegramFacade {
                                 KeyboardRow row2 = new KeyboardRow();
                                 KeyboardRow row3 = new KeyboardRow();
 
-                                row1.add(new KeyboardButton("Подписаться на Биткоин"));
-                                row2.add(new KeyboardButton("Отписаться от Биткоина"));
+                                row1.add(new KeyboardButton("Подписаться"));
+                                row2.add(new KeyboardButton("Отписаться"));
                                 row3.add(new KeyboardButton("Назад"));
 
 
